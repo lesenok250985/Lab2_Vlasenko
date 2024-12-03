@@ -1,0 +1,24 @@
+<h1>GRA</h1>
+<table border="1">
+    <% board.forEach((row, x) => { %>
+        <tr>
+            <% row.forEach((cell, y) => { %>
+                <td>
+                    <% if (cell.type === 'empty') { %>
+                        ?
+                    <% } else if (cell.type === 'treasure') { %>
+                        💰
+                    <% } else { %>
+                        👾
+                    <% } %>
+                </td>
+            <% }) %>
+        </tr>
+    <% }) %>
+</table>
+<h2>Toj kto GRA</h2>
+<ul>
+    <% players.forEach(player => { %>
+        <li><%= player.name %>: <%= player.score %> (Жив: <%= player.alive ? 'Да' : 'Нет' %>)</li>
+    <% }) %>
+</ul>
